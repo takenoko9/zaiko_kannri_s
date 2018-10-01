@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZaikoKannri9</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+    <div class="title">
+      <div class="header-left">
+        <%= link_to("- 在庫管理システム -", "/home/top") %>
+      </div>
+      <div class="header-right">
+        <ul>
+          <li>ログアウト</li>
+          <li><%= link_to("商品登録", "/product/resistration") %></li>
+          <li><%= link_to("在庫一覧", "/stock/index") %></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <body>
+    <%= yield %>
+  </body>
+</html>

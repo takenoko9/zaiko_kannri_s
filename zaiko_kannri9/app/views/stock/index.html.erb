@@ -1,0 +1,29 @@
+<div class="menu">
+  <h2>- 在庫一覧 -</h2>
+</div>
+<div class="stock-index">
+  <table border="1" cellspacing="3">
+    <tr>
+      <th>商品コード</th>
+      <th>商品名</th>
+      <th>数量</th>
+      <th>単位</th>
+      <th>金額</th>
+      <th>登録日時</th>
+      <th>最終更新日時</th>
+    </tr>
+    <% @products.each do |product| %>
+    <tr>
+      <div class="stock-index-item">
+          <td><%= product.id %></td>
+          <td><%= link_to(product.name, "/product/#{product.id}/edit") %></td>
+          <td><%= product.amount %></td>
+          <td><%= product.unit %></td>
+          <td><%= product.money %></td>
+          <td><%= product.created_at %></td>
+          <td><%= product.updated_at %></td>
+      </div>
+    </tr>
+    <% end %>
+   </table>
+</div>

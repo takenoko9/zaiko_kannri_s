@@ -1,0 +1,26 @@
+<div class="menu">
+  <h2>- 商品登録 -</h2>
+</div>
+<%= form_tag("/product/create") do %>
+<div class="input-product">
+  <div class="form-body">
+    <div class="form-name">
+      商品名
+    </div>
+    <input type="text" name="name" value="">
+    <div class="form-name">
+      数量
+    </div>
+    <input type="text" name="amount" value="">
+    <div class="form-name">
+      単位
+    </div>
+    <input type="text" name="unit" value="">
+    <div class="form-name">
+      金額
+    </div>
+    <input type="text" name="money" value="">
+  </div>
+  <input type="submit" name="" value="登録" class="resistration">
+</div>
+<% end %>
