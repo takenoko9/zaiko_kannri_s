@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get "login" => "users#login_form"
+  post "login" => "users#login"
+  post "logout" => "users#logout"
+
+  post "users/create" => "users#create"
+  get "signup" => "users#new"
+
   get 'stock/index' => "stock#index"
   get 'product/resistration' => "product#resistration"
   post "product/create" => "product#create"
@@ -7,7 +14,6 @@ Rails.application.routes.draw do
   post "product/:id/destroy" => "product#destroy"
 
   get "home/top" => "home#top"
-  get "home/login" => "home#login"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

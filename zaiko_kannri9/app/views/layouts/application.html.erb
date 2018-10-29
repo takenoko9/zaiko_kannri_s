@@ -14,9 +14,15 @@
       </div>
       <div class="header-right">
         <ul>
-          <li>ログアウト</li>
-          <li><%= link_to("商品登録", "/product/resistration") %></li>
-          <li><%= link_to("在庫一覧", "/stock/index") %></li>
+          <% if @current_user %>
+            <li><%= @current_user.name %></li>
+            <li><%= link_to("在庫一覧", "/stock/index") %></li>
+            <li><%= link_to("商品登録", "/product/resistration") %></li>
+            <li><%= link_to("ログアウト", "/logout", {method: :post}) %></li>
+          <% else %>
+            <li><%= link_to("新規登録", "/signup") %></li>
+            <li><%= link_to("ログイン", "/login") %></li>
+          <% end %>
         </ul>
       </div>
     </div>

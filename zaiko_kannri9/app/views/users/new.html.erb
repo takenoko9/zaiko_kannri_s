@@ -1,0 +1,16 @@
+<div class="menu">
+  <h2>- 新規ユーザー登録 -</h2>
+</div>
+<div class="form-body input-form">
+  <%= form_tag("/users/create") do %>
+    <div>
+      <p>ユーザー名</p>
+      <input name="name" value="<%= @user.name %>">
+      <p>メールアドレス</p>
+      <input name="email" value="<%= @user.email %>">
+      <p>パスワード</p>
+      <input type="password" name="password" value="<%= @user.password %>">
+    </div>
+      <input type="submit" value="新規登録" class="resistration">
+  <% end %>
+</div>

@@ -1,4 +1,5 @@
 class ProductController < ApplicationController
+  before_action :authenticate_user
 
   def edit
     @product = Product.find_by(id: params[:id])
@@ -18,14 +19,14 @@ class ProductController < ApplicationController
   end
 
   def create
-    @products = Product.new(name: params[:name], amount: params[:amount], unit: params[:unit], money: params[:money])
+    @products = Product.new(name: params[:name], amount: params[:amount], unit: params[:unit], money: params[:money], user_id: @current_user.name)
     @products.save
     redirect_to("/stock/index")
   end
 
   def destroy
     @product = Product.find_by(id: params[:id])
-    @product.destroy
+    @product.delete
 
     redirect_to("/stock/index")
   end
