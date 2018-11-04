@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   post "login" => "users#login"
-  delete "logout" => "users#logout"
+  post "logout" => "users#logout"
   get "login" => "users#login_form"
 
   post "users/create" => "users#create"
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post "product/create" => "product#create"
   get "product/:id/edit" => "product#edit"
   post "product/:id/update" => "product#update"
-  delete "product/:id/destroy" => "product#destroy"
+  post "product/:id/destroy" => "product#destroy"
 
   get "home/top" => "home#top"
 
