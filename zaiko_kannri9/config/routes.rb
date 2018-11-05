@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post "product/create" => "product#create"
   get "product/:id/edit" => "product#edit"
   post "product/:id/update" => "product#update"
-  post "product/:id/destroy" => "product#destroy"
+  get "product/:id/destroy" => "product#destroy"
 
   get "home/top" => "home#top"
 
