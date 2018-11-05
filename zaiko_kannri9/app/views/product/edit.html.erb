@@ -22,8 +22,8 @@
     <input type="text" name="money" value="<%= @product.money %>">
   </div>
   <input type="submit" name="" value="登録" class="resistration">
+  <% end %>
   <div class="destroy">
     <%= link_to("削除", "/product/#{@product.id}/destroy", {method: "post"}) %>
   </div>
 </div>
-<% end %>
